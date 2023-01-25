@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:last_mobile/view/home.view.dart';
+import 'package:last_mobile/view/login.view.dart';
 import 'package:last_mobile/view/splash.view.dart';
 
 
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashView(),
+      
     );
   }
 }
