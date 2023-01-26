@@ -7,17 +7,27 @@ import 'package:last_mobile/view/splash.view.dart';
 
 
 
-void main() => runApp(const MyApp());
-
+void main() {runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+    
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
-      
+      home: SplashView(), //go to login page
     );
   }
 }
+// class MyApp extends StatelessWidget {
+//   const MyApp({Key? key}) : super(key: key);
+//   @override
+//   Widget build(BuildContext context) {
+//     return GetMaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: SplashView(),
+      
+//     );
+//   }
+// }

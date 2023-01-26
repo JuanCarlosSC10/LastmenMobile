@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:last_mobile/util/colors.dart';
 import 'package:last_mobile/view/home.view.dart';
+import 'package:last_mobile/sidebar/navigation_drawer.dart';
+
 import 'package:last_mobile/view/sign_up.view.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -84,7 +86,12 @@ class LoginView extends StatelessWidget {
                         margin: EdgeInsets.only(top: 40.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            authController.loginUser();
+                            Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HomeScreen()),
+                                  );
+                            // authController.loginUser();
                           },
                           child: Text(
                             'Login',
