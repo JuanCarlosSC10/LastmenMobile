@@ -5,7 +5,6 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:last_mobile/sidebar/navigation_drawer.dart';
 import 'package:last_mobile/util/colors.dart';
-import 'add_usuario.view.dart';
 import 'package:http/http.dart' as http;
 
 class ProductScreen extends StatefulWidget {
@@ -50,11 +49,12 @@ class _ProductScreenState extends State<ProductScreen> {
               itemBuilder: (context, index) {
                 final product = productos[index] as Map;
                 return Card(
+                  color: green,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
-                    side: const BorderSide(
-                      color: Colors.black,
-                    ),
+                    // side: const BorderSide(
+                    //   color: Colors.black,
+                    // ),
                   ),
                   child: ListTile(
                     leading: CircleAvatar(child: Text('${index + 1}')),

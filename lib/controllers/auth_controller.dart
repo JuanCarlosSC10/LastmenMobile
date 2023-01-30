@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../view/home.view.dart';
 
 class AuthController {
+
   Future<http.Response> login(
       String username, String password, BuildContext context) async {
     final body = {
@@ -22,6 +23,7 @@ class AuthController {
     );
 
     if (response.statusCode == 200) {
+
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => HomeScreen()),

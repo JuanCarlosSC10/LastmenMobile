@@ -12,7 +12,7 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Material(
-        color: green,
+        color: greenbtn,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 80, 24, 0),
           child: Column(

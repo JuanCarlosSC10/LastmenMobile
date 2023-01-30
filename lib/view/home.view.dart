@@ -18,14 +18,24 @@ class HomeScreen extends StatelessWidget {
         body: Builder(builder: (context) {
           return Center(
             child: SelectionArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                Text('BIENVENIDO A LASTMEN'),
-                
-              ],
+              child: Container(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset(
+                        '../../assets/image/hoja.png',
+                        width: 100.0,
+                      ),
+                      Text('Bienvenido',
+                          style: TextStyle(
+                              fontSize: 45, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
           );
         }));
   }

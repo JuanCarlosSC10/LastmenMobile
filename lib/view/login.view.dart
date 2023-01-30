@@ -63,6 +63,10 @@ class LoginView extends StatelessWidget {
                           controller: usercontr,
                           keyboardType: TextInputType.text,
                           decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.account_circle,
+                                color: Colors.grey,
+                              ),
                               hintText: 'Usuario',
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none)),
@@ -78,6 +82,10 @@ class LoginView extends StatelessWidget {
                           controller: passcontr,
                           obscureText: true,
                           decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.lock,
+                                color: Colors.grey,
+                              ),
                               hintText: 'Contraseña',
                               border: OutlineInputBorder(
                                   borderSide: BorderSide.none)),
@@ -89,11 +97,6 @@ class LoginView extends StatelessWidget {
                         margin: EdgeInsets.only(top: 40.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => HomeScreen()),
-                            // );
                             usuarioController.login(
                                 usercontr.text, passcontr.text, context);
                             // usuarioController.login(usercontr.text, passcontr.text);
@@ -104,7 +107,7 @@ class LoginView extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 22),
                           ),
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: green,
+                              backgroundColor: greenbtn,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(28.0),
                               )),

@@ -53,14 +53,15 @@ class _UserScreenState extends State<UserScreen> {
                   color: green,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
-                    side: const BorderSide(
-                      color: Colors.black,
-                    ),
+                    // side: const BorderSide(
+                    //   color: Colors.black,
+                    // ),
                   ),
                   child: ListTile(
                     leading: CircleAvatar(child: Text('${index + 1}')),
                     title: Text(user['nombres']),
                     subtitle: Text(user['apellidos']),
+                    
                     trailing: PopupMenuButton(
                       onSelected: (value) {
                         if (value == 'editar') {

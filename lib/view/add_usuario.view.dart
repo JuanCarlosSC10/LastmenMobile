@@ -39,7 +39,7 @@ class AddUser extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: green,
+                  backgroundColor: greenbtn,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(28.0),
                   )),

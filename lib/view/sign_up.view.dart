@@ -41,7 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
       final apell = todo['apellidos'];
       final tipous = todo['tipoUsuario'];
       final direc = todo['direccion'];
-      final pass = todo['password'];
+      final pass = '';
       final email = todo['correo'];
       usercontr = id;
       usuariocontroller.text = user;
@@ -89,7 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: green,
+                  backgroundColor: greenbtn,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(28.0),
                   )),
@@ -217,6 +217,10 @@ Widget _usernameInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.person,
+            color: greenbtn,
+          ),
           labelText: 'Usuario',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
@@ -233,6 +237,10 @@ Widget _nombresInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.assignment_ind,
+            color: greenbtn,
+          ),
           labelText: 'Ingrese su Nombre',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
@@ -249,6 +257,10 @@ Widget _apellidosInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.assignment_ind,
+            color: greenbtn,
+          ),
           labelText: 'Ingrese su Apellido',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
@@ -265,6 +277,10 @@ Widget _tipoUserinput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.checklist,
+            color: greenbtn,
+          ),
           labelText: 'Tipo de Usuario',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
@@ -281,6 +297,10 @@ Widget _direccionInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.location_on,
+            color: greenbtn,
+          ),
           labelText: 'Direccion',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
@@ -297,6 +317,10 @@ Widget _passwordInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+          prefixIcon: Icon(
+            Icons.lock,
+            color: greenbtn,
+          ),
           labelText: 'Contraseña',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
@@ -313,7 +337,11 @@ Widget _emailInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-          labelText: 'Correo' ,
+          prefixIcon: Icon(
+            Icons.email,
+            color: greenbtn,
+          ),
+          labelText: 'Correo',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
