@@ -59,7 +59,8 @@ class _ProductScreenState extends State<ProductScreen> {
                   child: ListTile(
                     leading: CircleAvatar(child: Text('${index + 1}')),
                     title: Text(product['nombreProducto']),
-                    subtitle: Text(product['unidad_Medida']),
+                    subtitle: Text(product['descripcion']),
+                    trailing: Text('Stock: ' + product['cantidad'].toString()),
                   ),
                 );
               },
