@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:last_mobile/util/colors.dart';
+import 'package:last_mobile/view/login.view.dart';
 import '../view/usuario.view.dart';
 import 'drawer_item.dart';
 import '../view/productos.view.dart';
@@ -44,17 +45,9 @@ class NavigationDrawer extends StatelessWidget {
                 height: 30,
               ),
               DrawerItem(
-                  name: 'Chats',
-                  icon: Icons.message_outlined,
-                  onPressed: () => onItemPressed(context, index: 2)),
-              const SizedBox(
-                height: 30,
-              ),
-              DrawerItem(
                   name: 'Favourites',
-                  
                   icon: Icons.favorite_outline,
-                  onPressed: () => onItemPressed(context, index: 3)),
+                  onPressed: () => onItemPressed(context, index: 2)),
               const SizedBox(
                 height: 30,
               ),
@@ -66,11 +59,10 @@ class NavigationDrawer extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              
               DrawerItem(
                   name: 'Log out',
                   icon: Icons.logout,
-                  onPressed: () => onItemPressed(context, index: 5)),
+                  onPressed: () => onItemPressed(context, index: 3)),
             ],
           ),
         ),
@@ -85,11 +77,17 @@ class NavigationDrawer extends StatelessWidget {
       case 0:
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const ProductScreen()));
-            
+
         break;
       case 1:
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => const UserScreen()));
+        break;
+      case 2:
+        break;
+      case 3:
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginView()));
         break;
     }
   }

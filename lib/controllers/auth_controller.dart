@@ -1,48 +1,46 @@
 import 'dart:convert';
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-// class AutController {
-//   TextEditingController usernameController = TextEditingController();
-//   TextEditingController passwordController = TextEditingController();
-
-//   Future loginUser() async {
-//     const url = "http://lastpro-001-site1.btempurl.com/api/Auth";
-
-//     var response = await http.post(Uri.parse(url),
-//         body: jsonEncode({
-//           "usuario": usernameController.text,
-//           "password": passwordController.text,
-//         }));
-//     if (response.statusCode == 200) {
-//       var loginArr = json.decode(response.body);
-//       // save this token in shared prefrences and make user logged in and navigate
-
-//       print(loginArr['token']);
-//     } else {
-//       print(response.body);
-//     }
-//   }
-// }
+import '../view/home.view.dart';
 
 class AuthController {
-  Future<http.Response> login(String username, String password) async {
+  Future<http.Response> login(
+      String username, String password, BuildContext context) async {
+    final body = {
+      "usuario": username,
+      "password": password,
+    };
+    final url = 'https://hostingweb0-001-site4.atempurl.com/api/Auth';
+    final uri = Uri.parse(url);
     final response = await http.post(
-        Uri.parse('https://hostingweb0-001-site4.atempurl.com/api/Auth'),
-        body: {'usuario': username, 'password': password});
+      uri,
+      body: jsonEncode(body),
+      headers: {'Content-Type': 'application/json'},
+    );
+
     if (response.statusCode == 200) {
-      // get the token from the response
-      print(response.statusCode);
-    print(response.body);
-      var token = response.headers['authorization'];
-      // store the token
-      var a = token.toString();
-      final prefs = await SharedPreferences.getInstance();
-      prefs.setString('token', a);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
+    } else {
+      alertError(context);
     }
     return response;
-    
   }
- 
+
+  void alertError(BuildContext context) {
+    AwesomeDialog(
+      context: context,
+      dialogType: DialogType.error,
+      animType: AnimType.topSlide,
+      showCloseIcon: true,
+      title: "Error",
+      desc: "Contraseña y/o Usuario incorrecto",
+      btnOkOnPress: () {},
+    ).show();
+  }
 }

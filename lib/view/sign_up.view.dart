@@ -217,7 +217,7 @@ Widget _usernameInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-          hintText: 'Usuario',
+          labelText: 'Usuario',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
@@ -233,7 +233,7 @@ Widget _nombresInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-          hintText: 'Ingrese su Nombre',
+          labelText: 'Ingrese su Nombre',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
@@ -249,7 +249,7 @@ Widget _apellidosInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-          hintText: 'Ingrese su Apellido',
+          labelText: 'Ingrese su Apellido',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
@@ -265,7 +265,7 @@ Widget _tipoUserinput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-          hintText: 'Tipo de Usuario',
+          labelText: 'Tipo de Usuario',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
@@ -281,7 +281,7 @@ Widget _direccionInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-          hintText: 'Direccion',
+          labelText: 'Direccion',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
@@ -297,7 +297,7 @@ Widget _passwordInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-          hintText: 'Contraseña',
+          labelText: 'Contraseña',
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );
@@ -313,7 +313,7 @@ Widget _emailInput(BuildContext context, control) {
       controller: control,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-          hintText: 'Correo',
+          labelText: 'Correo' ,
           border: OutlineInputBorder(borderSide: BorderSide.none)),
     ),
   );

@@ -50,6 +50,7 @@ class _UserScreenState extends State<UserScreen> {
                 final user = usuarios[index] as Map;
                 final id = user['idUsuario'];
                 return Card(
+                  color: green,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                     side: const BorderSide(

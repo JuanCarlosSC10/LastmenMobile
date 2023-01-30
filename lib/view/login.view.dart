@@ -89,12 +89,13 @@ class LoginView extends StatelessWidget {
                         margin: EdgeInsets.only(top: 40.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()),
-                            );
-                            // authController.loginUser();
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //       builder: (context) => HomeScreen()),
+                            // );
+                            usuarioController.login(
+                                usercontr.text, passcontr.text, context);
                             // usuarioController.login(usercontr.text, passcontr.text);
                           },
                           child: Text(
