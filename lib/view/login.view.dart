@@ -11,11 +11,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../controllers/auth_controller.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
-
+  LoginView({super.key});
+  final usuarioController = new AuthController();
+  final usercontr = TextEditingController();
+  final passcontr = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    AutController authController = AutController();
     return Scaffold(
       body: Column(
         children: [
@@ -59,25 +60,27 @@ class LoginView extends StatelessWidget {
                             color: Color.fromRGBO(142, 142, 147, 1.2),
                             borderRadius: BorderRadius.circular(30.0)),
                         child: TextField(
+                          controller: usercontr,
                           keyboardType: TextInputType.text,
-                          controller: authController.usernameController,
                           decoration: InputDecoration(
-                              hintText: 'Email',
-                              border: OutlineInputBorder(borderSide: BorderSide.none)),
+                              hintText: 'Usuario',
+                              border: OutlineInputBorder(
+                                  borderSide: BorderSide.none)),
                         ),
                       ),
-                     Container(
+                      Container(
                         margin: EdgeInsets.only(top: 15.0),
                         padding: EdgeInsets.only(left: 20.0),
                         decoration: BoxDecoration(
                             color: Color.fromRGBO(142, 142, 147, 1.2),
                             borderRadius: BorderRadius.circular(30.0)),
                         child: TextField(
+                          controller: passcontr,
                           obscureText: true,
-                          controller: authController.passwordController,
                           decoration: InputDecoration(
-                              hintText: 'Password',
-                              border: OutlineInputBorder(borderSide: BorderSide.none)),
+                              hintText: 'Contraseña',
+                              border: OutlineInputBorder(
+                                  borderSide: BorderSide.none)),
                         ),
                       ),
                       Container(
@@ -87,15 +90,17 @@ class LoginView extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => HomeScreen()),
-                                  );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()),
+                            );
                             // authController.loginUser();
+                            // usuarioController.login(usercontr.text, passcontr.text);
                           },
                           child: Text(
-                            'Login',
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                            'Ingresar',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 22),
                           ),
                           style: ElevatedButton.styleFrom(
                               backgroundColor: green,
@@ -104,36 +109,6 @@ class LoginView extends StatelessWidget {
                               )),
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.only(top: 30.0),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Don't have an accoount?",
-                                  style: TextStyle(
-                                      color: gris,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 15.0)),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SignUpPage()),
-                                  );
-                                },
-                                child: Container(
-                                  margin:
-                                      EdgeInsets.symmetric(horizontal: 10.0),
-                                  child: Text('Sign Up',
-                                      style: TextStyle(
-                                          color: green,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 15.0)),
-                                ),
-                              )
-                            ]),
-                      )
                     ],
                   ),
                 ),

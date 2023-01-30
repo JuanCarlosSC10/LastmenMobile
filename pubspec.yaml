@@ -43,6 +43,7 @@ dependencies:
   get: ^4.6.5
   state_set: ^3.6.0+6
   flutter_svg: ^0.17.4
+  awesome_dialog: ^3.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
